@@ -1,7 +1,7 @@
 # ⚡ Axiom RAG Engine
 
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/Soumyajit-Pal/numpy-rag-engine)
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://numpy-rag-engine.streamlit.app/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/Soumyajit-Pal/axiom-rag-engine)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://axiom-rag-engine.streamlit.app/)
 
 A production-grade, framework-free Retrieval-Augmented Generation (RAG) system built from first principles in pure Python and NumPy.
 
@@ -75,7 +75,7 @@ top_k_indices = np.argsort(similarities)[-k:][::-1]
 ## 📂 Project Structure
 
 ```
-numpy-rag-engine/
+axiom-rag-engine/
 ├── app.py                    # Streamlit interactive chat interface
 ├── config.py                 # System constants, models, and configuration
 ├── requirements.txt          # Python dependencies
@@ -105,8 +105,8 @@ numpy-rag-engine/
 
 ### 1. Clone & Install Dependencies
 ```bash
-git clone https://github.com/Soumyajit-Pal/numpy-rag-engine.git
-cd numpy-rag-engine
+git clone https://github.com/Soumyajit-Pal/axiom-rag-engine.git
+cd axiom-rag-engine
 pip install -r requirements.txt
 ```
 
