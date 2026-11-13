@@ -1,4 +1,7 @@
-# ⚡ Framework-Free NumPy RAG Engine
+# ⚡ NumPy-RAG: In-Memory Vector Retrieval Engine
+
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/Soumyajit-Pal/numpy-rag-engine)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://numpy-rag-engine.streamlit.app/)
 
 A production-grade, framework-free Retrieval-Augmented Generation (RAG) system built from first principles in pure Python and NumPy.
 
