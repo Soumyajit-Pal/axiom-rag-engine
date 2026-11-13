@@ -21,7 +21,7 @@ from utils.helpers import compute_file_hash, logger
 
 # Configure Streamlit page
 st.set_page_config(
-    page_title="NumPy-RAG Engine",
+    page_title="Axiom RAG Engine",
     page_icon="⚡",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -208,7 +208,7 @@ with st.sidebar:
 
 
 # --- MAIN AREA ---
-st.markdown('<div class="main-title">⚡ NumPy RAG Engine</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">⚡ Axiom RAG Engine</div>', unsafe_allow_html=True)
 st.markdown(
     '<div class="sub-tag">Pure Mathematical Vector Retrieval (<code>np.dot</code>) &bull; Zero Frameworks &bull; Zero Vector Databases &bull; Gemini REST API</div>',
     unsafe_allow_html=True

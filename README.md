@@ -1,4 +1,4 @@
-# ⚡ NumPy RAG Engine
+# ⚡ Axiom RAG Engine
 
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/Soumyajit-Pal/numpy-rag-engine)
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://numpy-rag-engine.streamlit.app/)
