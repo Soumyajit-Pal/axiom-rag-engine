@@ -208,7 +208,7 @@ with st.sidebar:
 
 
 # --- MAIN AREA ---
-st.markdown('<div class="main-title">⚡ NumPy-RAG: In-Memory Vector Retrieval Engine</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">⚡ NumPy RAG Engine</div>', unsafe_allow_html=True)
 st.markdown(
     '<div class="sub-tag">Pure Mathematical Vector Retrieval (<code>np.dot</code>) &bull; Zero Frameworks &bull; Zero Vector Databases &bull; Gemini REST API</div>',
     unsafe_allow_html=True
