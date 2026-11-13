@@ -16,6 +16,14 @@ load_dotenv(BASE_DIR / ".env")
 
 # API Configuration
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+
+# Fallback to Streamlit Community Cloud Secrets if deployed
+try:
+    import streamlit as st
+    if not GEMINI_API_KEY and hasattr(st, "secrets") and "GEMINI_API_KEY" in st.secrets:
+        GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+except Exception:
+    pass
 GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta"
 
 # Models
