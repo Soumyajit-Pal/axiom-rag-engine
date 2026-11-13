@@ -1,7 +1,7 @@
 # ⚡ Axiom RAG Engine
 
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/Soumyajit-Pal/axiom-rag-engine)
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://axiom-rag-engine.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://axiom-rag-engine-epji2gexdcuatggdducvgy.streamlit.app/)
 
 A production-grade, framework-free Retrieval-Augmented Generation (RAG) system built from first principles in pure Python and NumPy.
 
