@@ -77,17 +77,7 @@ with st.sidebar:
     
     st.markdown("---")
     
-    # 1. API Key Input
-    api_key_input = st.text_input(
-        "Gemini API Key",
-        value=GEMINI_API_KEY,
-        type="password",
-        help="Get a free key at https://aistudio.google.com/"
-    )
-    
-    st.markdown("---")
-    
-    # 2. PDF Upload
+    # 1. PDF Upload
     uploaded_file = st.file_uploader("Upload PDF Document", type=["pdf"])
     
     # 3. Hyperparameters
@@ -128,8 +118,8 @@ with st.sidebar:
     index_btn = st.button("🚀 Ingest & Index Document", use_container_width=True, type="primary")
 
     if index_btn:
-        if not api_key_input.strip():
-            st.error("Please enter a valid Gemini API Key to proceed.")
+        if not GEMINI_API_KEY:
+            st.error("⚠️ GEMINI_API_KEY is not configured in .env. Please set it to proceed.")
         elif uploaded_file is None:
             st.warning("Please upload a PDF document first.")
         else:
@@ -175,8 +165,7 @@ with st.sidebar:
                         with st.status(f"Vectorizing {len(texts_to_embed)} chunks via Gemini API...", expanded=True) as status:
                             matrix = embed_texts(
                                 texts_to_embed,
-                                task_type="RETRIEVAL_DOCUMENT",
-                                api_key=api_key_input
+                                task_type="RETRIEVAL_DOCUMENT"
                             )
                             df_chunks, matrix = build_vector_store(chunks, matrix)
                             save_cache(file_hash, df_chunks, matrix)
@@ -261,8 +250,8 @@ prompt_input = st.chat_input("Ask a factual question about your uploaded documen
 
 if prompt_input:
     # Validate preconditions
-    if not api_key_input.strip():
-        st.warning("⚠️ Please provide your Gemini API Key in the left sidebar.")
+    if not GEMINI_API_KEY:
+        st.warning("⚠️ GEMINI_API_KEY is not configured in .env.")
         st.stop()
         
     if st.session_state.df_chunks is None or st.session_state.embedding_matrix is None:
@@ -285,8 +274,7 @@ if prompt_input:
                     query=prompt_input,
                     df=st.session_state.df_chunks,
                     matrix=st.session_state.embedding_matrix,
-                    k=top_k,
-                    api_key=api_key_input
+                    k=top_k
                 )
                 
                 retrieval_latency = round((time.time() - t_start) * 1000, 2)
@@ -295,7 +283,6 @@ if prompt_input:
                 rag_prompt = build_rag_prompt(prompt_input, retrieved_df)
                 response_text = generate_rag_response(
                     rag_prompt,
-                    api_key=api_key_input,
                     temperature=temperature
                 )
                 
